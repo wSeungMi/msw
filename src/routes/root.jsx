@@ -1,11 +1,12 @@
-import { Link, Outlet } from "react-router-dom";
+// import { Link } from "react-router-dom";
+import S from "../components/Layout.module.css";
 
 export default function Root() {
   return (
     <>
-      <div id="nav">
-        <header>
-          <nav>
+      <header className={S.header}>
+        🌎 NARAS
+        {/* <nav>
             <ul>
               <li>
                 <Link to={"/"}>Home</Link>
@@ -17,12 +18,8 @@ export default function Root() {
                 <Link to={"/country"}>Contury</Link>
               </li>
             </ul>
-          </nav>
-        </header>
-        <div>
-          <Outlet />
-        </div>
-      </div>
+          </nav> */}
+      </header>
     </>
   );
 }
