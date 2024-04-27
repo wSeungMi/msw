@@ -7,20 +7,27 @@ import Search from "./pages/Search";
 import Country from "./pages/Country";
 import ErrorPage from "./error-page";
 import "./index.css";
+import Root from "./routes/root";
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Home />,
+    element: <Root />,
     errorElement: <ErrorPage />,
-  },
-  {
-    path: "search",
-    element: <Search />,
-  },
-  {
-    path: "country",
-    element: <Country />,
+    children: [
+      {
+        path: "/",
+        element: <Home />,
+      },
+      {
+        path: "search",
+        element: <Search />,
+      },
+      {
+        path: "country/:code",
+        element: <Country />,
+      },
+    ],
   },
 ]);
 
