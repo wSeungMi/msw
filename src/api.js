@@ -7,7 +7,6 @@ const instance = axios.create({
 export async function fetchCountries() {
   try {
     const response = await instance.get("/all");
-    console.log("api", response.data);
     return response.data;
   } catch (e) {
     return [];
