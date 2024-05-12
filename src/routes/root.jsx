@@ -1,10 +1,17 @@
 // import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import S from "../components/Layout.module.css";
 
 export default function Root() {
+  const nav = useNavigate();
+
+  const onClickHeader = () => {
+    nav(`/`);
+  };
+
   return (
     <>
-      <header className={S.header}>
+      <header onClick={onClickHeader} className={S.header}>
         🌎 NARAS
         {/* <nav>
             <ul>
