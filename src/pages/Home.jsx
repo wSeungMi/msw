@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { fetchCountries } from "../api";
+import CountryList from "../components/CountryList";
 
 export default function Home() {
   const [countries, setCountries] = useState([]);
@@ -16,7 +17,7 @@ export default function Home() {
 
   return (
     <>
-      <h1>Home</h1>
+      <CountryList countries={countries} />
     </>
   );
 }
