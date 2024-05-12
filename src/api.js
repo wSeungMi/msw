@@ -6,8 +6,8 @@ const instance = axios.create({
 
 export async function fetchCountries() {
   try {
-    const response = await instance.get("/all");
-    return response.data;
+    const { data } = await instance.get("/all");
+    return data;
   } catch (e) {
     return [];
   }
@@ -19,5 +19,14 @@ export async function fetchSearchResults(q) {
     return data;
   } catch (e) {
     return [];
+  }
+}
+
+export async function fetchCountry(code) {
+  try {
+    const { data } = await instance.get(`/code/${code}`);
+    return data;
+  } catch (e) {
+    return null;
   }
 }
