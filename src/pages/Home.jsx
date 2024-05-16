@@ -9,7 +9,6 @@ export default function Home() {
 
   const setInitData = async () => {
     const data = await fetchCountries();
-    console.log("home", data);
     setCountries(data);
   };
 
